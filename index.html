@@ -1,26 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <title>My Home</title>
-  <style>
-    body {
-      background-color: #2c3e50; /* 背景色 */
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      font-family: sans-serif;
-    }
-    #clock {
-      font-size: 8rem;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="clock">00:00:00</div>
-  <script src="main.js"></script>
+  <div class="container">
+    <div id="clock">00:00:00</div>
+
+    <div class="search-box">
+      <div class="gcse-search"></div>
+    </div>
+  </div>
+
+  <form action="https://www.google.com/search" method="get">
+  <input type="text" name="q" placeholder="Google で検索" autofocus>
+  <button type="submit">検索</button>
+</form>
 </body>
 </html>
