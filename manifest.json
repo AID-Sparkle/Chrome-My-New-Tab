@@ -1,0 +1,9 @@
+{
+  "manifest_version": 3,
+  "name": "My Custom Dashboard",
+  "version": "1.0",
+  "description": "自分専用の時計・天気ダッシュボード",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  }
+}
