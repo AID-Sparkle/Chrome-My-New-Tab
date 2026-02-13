@@ -1,4 +1,4 @@
-const ACCESS_KEY = 'CONFIG.UNSPLASH_ACCESS_KEY'; // ここに自分のキーを入力
+const ACCESS_KEY = CONFIG.UNSPLASH_ACCESS_KEY;
 
 async function updateBackground() {
   const lastUpdate = localStorage.getItem('lastBgUpdate');
@@ -7,7 +7,7 @@ async function updateBackground() {
   // 前回更新が今日でない場合のみAPIを叩く
   if (lastUpdate !== today) {
     try {
-      const response = await fetch(`https://api.unsplash.com/photos/random?query=nature&orientation=landscape&client_id=${ACCESS_KEY}`);
+      const response = await fetch(`https://api.unsplash.com/photos/random?query=city&orientation=landscape&client_id=${ACCESS_KEY}`);
       const data = await response.json();
       const imageUrl = data.urls.regular;
 
