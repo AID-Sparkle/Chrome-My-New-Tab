@@ -6,17 +6,16 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <div id="clock">00:00:00</div>
+  <div id="clock">00:00:00</div>
 
-    <div class="search-box">
-      <div class="gcse-search"></div>
-    </div>
+  <div class="main-container">
+    <form class="search-form" action="https://www.google.com/search" method="get">
+      <input type="text" name="q" placeholder="Google で検索" autofocus>
+      <button type="submit">検索</button>
+    </form>
   </div>
 
-  <form action="https://www.google.com/search" method="get">
-  <input type="text" name="q" placeholder="Google で検索" autofocus>
-  <button type="submit">検索</button>
-</form>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
