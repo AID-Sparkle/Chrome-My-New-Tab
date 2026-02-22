@@ -33,6 +33,15 @@ body::before {
   text-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
+#weather {
+  position: absolute;
+  top: 70px; /* 時計(2rem)の下に来るように調整 */
+  left: 20px;
+  font-size: 1.2rem;
+  font-weight: normal;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
 /* 中央配置のためのコンテナ */
 .main-container {
   display: flex;

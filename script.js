@@ -33,6 +33,37 @@ function updateClock() {
   document.getElementById('clock').textContent = now.toLocaleTimeString('ja-JP', { hour12: false });
 }
 
+// script.js に追加
+async function updateWeather() {
+  const API_KEY = CONFIG.WEATHER_API_KEY;
+
+  navigator.geolocation.getCurrentPosition(async (position) => {
+    const lat = position.coords.latitude;
+    const lon = position.coords.longitude;
+
+    try {
+      // 緯度経度から取得
+      const response = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=ja&appid=${API_KEY}`
+      );
+      const data = await response.json();
+
+      const temp = Math.round(data.main.temp);
+      const description = data.weather[0].description;
+      
+      // data.name には通常「市」レベルの名前が入ります
+      // もし町名などの細かい名前が返ってくる場合は、管理画面やクエリで調整可能です
+      const cityName = data.name; 
+
+      document.getElementById('weather').textContent = `${cityName}: ${description} ${temp}℃`;
+    } catch (error) {
+      console.error('天気情報の取得に失敗しました', error);
+      document.getElementById('weather').textContent = '天気取得エラー';
+    }
+  });
+}
+
 setInterval(updateClock, 1000);
 updateClock();
+updateWeather();
 updateBackground(); // 背景更新を実行
